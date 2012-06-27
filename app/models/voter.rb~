@@ -1,0 +1,5 @@
+class Voter < ActiveRecord::Base
+  attr_accessible :name
+  
+  has_one :vote
+end
