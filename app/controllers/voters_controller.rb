@@ -85,6 +85,7 @@ class VotersController < ApplicationController
   def destroy
     @voter = Voter.find(params[:id])
     @voter.destroy
+    @voter.vote.destroy
 
     respond_to do |format|
       format.html { redirect_to voters_url }
