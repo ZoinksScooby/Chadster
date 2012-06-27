@@ -19,14 +19,23 @@
 <br />
 
   <div class="field">
-    <%= f.label :candidate %><br />
-    <!-- %= f.text_field :candidate % -->
+        <%= f.fields_for :vote do |vote| %>
+
+        <% @candidates.each do | candidate | %>
+            
+            <%= vote.radio_button :candidate_id , candidate.id %>
+            <%= vote.label :candidate_id, candidate.name %>
+            <br>
+            
+            <% end %>
+
+        <% end %>
   </div>
-    
+  
+  <br />
+  
   <div class="actions">
     <%= f.submit %>
-  </div>
-      
-  <br />
+  </div>    
   
 <% end %>

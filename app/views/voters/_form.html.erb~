@@ -22,11 +22,11 @@
     <%= f.label :candidate %><br />
     <%= f.text_field :candidate %>
   </div>
-    
+  
+  <br />
+  
   <div class="actions">
     <%= f.submit %>
-  </div>
-      
-  <br />
+  </div>    
   
 <% end %>

@@ -1,6 +1,8 @@
 class Voter < ActiveRecord::Base
   attr_accessible :name,
-                  :vote_attributes
+                  :id,
+                  :vote_attributes,
+                  :candidate_attributes
   
   has_one :vote, :dependent => :destroy
   has_one :candidate, :through => :vote
