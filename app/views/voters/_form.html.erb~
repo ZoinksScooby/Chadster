@@ -20,7 +20,7 @@
 
   <div class="field">
     <%= f.label :candidate %><br />
-    <!-- %= f.text_field :candidate % -->
+    <%= f.text_field :candidate %>
   </div>
     
   <div class="actions">

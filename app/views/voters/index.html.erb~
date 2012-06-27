@@ -51,7 +51,7 @@
 
 <br />
 
-<!-- p>
-<%= @winner %> wins!
-</p -->
+<p>
+#<%= @winner %> wins!
+</p>
 

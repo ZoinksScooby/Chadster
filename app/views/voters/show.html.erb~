@@ -11,7 +11,7 @@
 	<b>Vote</b><br>
 
 	<table>
-		<tr><td>Candidate ID: </td><td><%=	@voter.vote.candidate_id %></td></tr>
+		<tr><td>Candidate #</td><td><%=	@voter.vote.candidate_id %></td></tr>
 
 		<tr><td>Candidate Name: </td><td><%=	@voter.vote.candidate.name %></td></tr>
 
