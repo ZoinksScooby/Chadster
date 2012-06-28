@@ -25,4 +25,4 @@
 <br />
 <br />
 
-<%= link_to 'Voters Page', voters_path %>
+<%= link_to 'Voters', voters_path %>

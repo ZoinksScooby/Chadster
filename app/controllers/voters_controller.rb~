@@ -7,7 +7,7 @@ class VotersController < ApplicationController
     @votes = Vote.all
     @candidates = Candidate.all
     
- #   @winner = Candidate.find(Vote.all.group_by {|vote| vote.candidate_id}.keys.first).name
+    @winner = Candidate.find(Vote.all.group_by {|vote| vote.candidate_id}.keys.most).name
 
     respond_to do |format|
       format.html # index.html.erb
@@ -85,7 +85,6 @@ class VotersController < ApplicationController
   def destroy
     @voter = Voter.find(params[:id])
     @voter.destroy
-    @voter.vote.destroy
 
     respond_to do |format|
       format.html { redirect_to voters_url }

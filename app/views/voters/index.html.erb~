@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th align="left">Voter Name</th>
+    <th align="left">Voter</th>
     <th></th>
     <th></th>
     <th></th>
@@ -30,7 +30,7 @@
 <% totalvotes = @votes.count %>
 
   <tr>
-    <th align="left">Candidate Name</th>
+    <th align="left">Candidate</th>
     <th align="right">Votes</th>
     <th align="right">Percent</th>
   </tr>
@@ -51,7 +51,11 @@
 
 <br />
 
-<!-- p>
+<p>
 <%= @winner %> wins!
-</p -->
+</p>
+
+<br />
+
+<%= link_to 'Candidates', candidates_path %>
 
