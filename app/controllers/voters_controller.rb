@@ -1,4 +1,7 @@
 class VotersController < ApplicationController
+
+  before_filter :authenticate_voter!
+
   # GET /voters
   # GET /voters.json
   def index
