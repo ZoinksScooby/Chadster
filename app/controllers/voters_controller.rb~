@@ -7,7 +7,7 @@ class VotersController < ApplicationController
     @votes = Vote.all
     @candidates = Candidate.all
     
-    @winner = Candidate.find(Vote.all.group_by {|vote| vote.candidate_id}.keys.most).name
+    @winner = Candidate.find(Vote.all.group_by {|vote| vote.candidate_id}.keys.min).name
 
     respond_to do |format|
       format.html # index.html.erb
