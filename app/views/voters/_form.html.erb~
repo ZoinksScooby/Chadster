@@ -19,8 +19,31 @@
 <br />
 
   <div class="field">
-    <%= f.label :candidate %><br />
-    <%= f.text_field :candidate %>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+
+<br />
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+
+<br />
+
+  <div class="field">
+        <%= f.fields_for :vote do |vote| %>
+
+        <% @candidates.each do | candidate | %>
+            
+            <%= vote.radio_button :candidate_id , candidate.id %>
+            <%= vote.label :candidate_id, candidate.name %>
+            <br>
+            
+            <% end %>
+
+        <% end %>
   </div>
   
   <br />

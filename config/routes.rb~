@@ -1,4 +1,6 @@
 Chadster::Application.routes.draw do
+  devise_for :voters
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -11,7 +13,13 @@ Chadster::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  resources :voters
+  resources :voters do
+    member do
+      get 'admin'
+    end
+    get 'sign_out'
+  end
+  
   resources :votes
   resources :candidates
 

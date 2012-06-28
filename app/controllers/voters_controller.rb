@@ -1,6 +1,6 @@
 class VotersController < ApplicationController
 
-  before_filter :authenticate_voter!
+  before_filter :authenticate_voter!, :except => [:index]
 
   # GET /voters
   # GET /voters.json
@@ -94,4 +94,17 @@ class VotersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # ADMIN
+  def admin
+    @voters = Voter.all 
+    @votes = Vote.all
+    @candidates = Candidate.all
+
+    respond_to do |format|
+      format.html 
+      format.json { render json: @voters }
+    end
+  end
+  
 end

@@ -8,6 +8,9 @@
 </head>
 <body>
 
+<%= link_to("Sign Out", destroy_voter_session_path, :method => :delete) if voter_signed_in? %>
+<%= link_to("Sign In", new_voter_session_path) unless voter_signed_in? %>
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
